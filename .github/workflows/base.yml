@@ -11,6 +11,6 @@ jobs:
       - name: Base job 1
         run: echo 'Bismillah'
       - name: Use composite
-        uses: ./.github/actions/test-composite.yml
+        uses: ./.github/actions/test-composite
   reusable-workflow:
     uses: ./.github/workflows/reusable.yml
