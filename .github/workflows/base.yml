@@ -8,5 +8,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Testing the job
+      - name: Base job 1
         run: echo 'Bismillah'
+      - name: Use Reusable workflow
+        uses: ./.github/workflows/reusable.yml
