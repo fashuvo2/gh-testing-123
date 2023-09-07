@@ -14,5 +14,7 @@ jobs:
         run: echo 'Bismillah'
       - name: Use composite
         uses: ./.github/actions/test-composite
+        with:
+          custom-input-name: 'Yes'
   reusable-workflow:
     uses: ./.github/workflows/reusable.yml
