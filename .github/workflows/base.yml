@@ -1,0 +1,9 @@
+name: Basic workflow file
+on:
+  workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing the job
+        run: echo 'Bismillah'
