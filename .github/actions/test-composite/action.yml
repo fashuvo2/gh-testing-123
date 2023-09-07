@@ -1,7 +1,7 @@
 name: 'My composite action'
 description: 'This is the custom composite action'
 runs:
- using: 'composite'
-  - name: Install dependencies
-    run: echo "Coming from the composite action"
-    shell: bash
+  using: 'composite'
+    - name: Install dependencies
+      run: echo "Coming from the composite action"
+      shell: bash
