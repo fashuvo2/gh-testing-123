@@ -1,5 +1,6 @@
 name: Reusuable details workflow
-on: workflow_call
+on:
+  workflow_call:
 jobs:
   reusable-job:
     runs-on: ubuntu-latest
