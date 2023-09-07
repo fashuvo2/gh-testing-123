@@ -4,7 +4,7 @@ inputs:
   custom-input-name:
     description: 'Description for the input'
     required: true
-    default: 'Yes'
+    # default: 'Yes'
 runs:
   using: 'composite'
   steps:
