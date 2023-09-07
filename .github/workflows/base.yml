@@ -12,5 +12,5 @@ jobs:
         uses: actions/checkout@v3
       - name: Base job 1
         run: echo 'Bismillah'
-      - name: Use Reusable workflow
-        uses: ./.github/workflows/reusable.yml
+  reusable-workflow:
+    uses: ./.github/workflows/reusable.yml
