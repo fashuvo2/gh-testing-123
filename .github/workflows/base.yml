@@ -15,6 +15,6 @@ jobs:
       - name: Use composite
         uses: ./.github/actions/test-composite
         with:
-          custom-input-name: 'Yes'
+          custom-input-name: 'No'
   reusable-workflow:
     uses: ./.github/workflows/reusable.yml
