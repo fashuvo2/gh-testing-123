@@ -1,0 +1,20 @@
+name: My GitHub Action Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      MY_ENV_VARIABLE: "This is my environment variable."
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print Environment Variable
+        run: echo "My environment variable: $MY_ENV_VARIABLE"
