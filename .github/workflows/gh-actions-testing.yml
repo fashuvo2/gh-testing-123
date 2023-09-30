@@ -1,21 +1,26 @@
-name: Using Env Vars
+name: Use GitHub Secrets Example
 
 on:
   workflow_dispatch
 
-env:
-  PLUGIN_VERSION: 4.2.1
-
 jobs:
-  build:
+  use-secret:
     runs-on: ubuntu-latest
-
-    env:
-      UPDATE_DATE: "October 1, 2023"
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Print Environment Variable
-        run: echo "The plugin version is $PLUGIN_VERSION. It was updated on $UPDATE_DATE."
+      - name: Use the Secret
+        run: |
+          # Access the secret using the environment variable
+          API_KEY=$MY_API_KEY
+
+          # Print the secret value
+          echo "My API Key is: $API_KEY"
+
+          # You can use the secret in your scripts or commands
+          # For example, if it's an API key, you can use it to make API requests
+
+        env:
+          MY_API_KEY: ${{ secrets.MY_API_KEY }}
