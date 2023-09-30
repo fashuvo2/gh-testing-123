@@ -3,16 +3,19 @@ name: My GitHub Action Workflow
 on:
   workflow_dispatch
 
+env:
+  PLUGIN_VERSION: 4.2.1
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     env:
-      MY_ENV_VARIABLE: "This is my environment variable."
+      UPDATE_DATE: "October 1, 2023"
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Print Environment Variable
-        run: echo "My environment variable - $MY_ENV_VARIABLE"
+        run: echo "The plugin version is $PLUGIN_VERSION. It was updated on $UPDATE_DATE."
