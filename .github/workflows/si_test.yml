@@ -1,7 +1,9 @@
 name: Testing SI workflow
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - fashuvo2-patch-1
 
 jobs:
   hello_world_job:
