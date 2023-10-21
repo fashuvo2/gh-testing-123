@@ -17,6 +17,7 @@ jobs:
       run: |
         echo "Building the project..."
         exit 1
+      continue-on-error: true
 
   report:
     runs-on: ubuntu-latest
