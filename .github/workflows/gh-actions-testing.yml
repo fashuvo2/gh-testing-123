@@ -13,5 +13,6 @@ jobs:
        - name: Print text
          run: |
            echo "I'm from the original workflow"
-       - name: Print from reusable
-         uses: ./.github/workflows/reusable_details.yml
+
+  greet:
+    uses: ./.github/workflows/reusable_details.yml
