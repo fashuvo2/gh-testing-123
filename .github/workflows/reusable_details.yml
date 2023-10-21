@@ -13,5 +13,4 @@ jobs:
     steps:
       - name: Print name
         run: |
-          GREETING = ${{ inputs.provide-name }}
-          echo $GREETING
+          echo Hello, ${{ inputs.provide-name }}
