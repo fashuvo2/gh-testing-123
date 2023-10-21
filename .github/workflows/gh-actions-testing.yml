@@ -16,3 +16,5 @@ jobs:
 
   greet:
     uses: ./.github/workflows/reusable_details.yml
+    with:
+      provide-name: 'Harmony'
