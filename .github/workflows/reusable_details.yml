@@ -1,16 +1,18 @@
-name: Reusuable details workflow
+name: Reusable workflow
+
 on:
   workflow_call:
-    inputs:
-      provide-name: 
-        description: Please provide your name
-        required: false
-        default: 'World'
-        type: string
+    outputs:
+      greet_text:
+        description: "The output string"
+        value: ${{ jobs.greet_job.outputs.output }}
+
 jobs:
-  use-data:
+  greet_job:
+    name: Generate greetings
     runs-on: ubuntu-latest
+    outputs:
+      output: ${{ steps.greet.outputs.the_greet_text }}
     steps:
-      - name: Print name
-        run: |
-          echo Hello, ${{ inputs.provide-name }}
+      - id: greet
+        run: echo "the_greet_text=Howdy" >> $GITHUB_OUTPUT
