@@ -12,7 +12,12 @@ jobs:
          run: |
            echo "I'm from the original workflow"
 
-  greet:
+  get_greet:
     uses: ./.github/workflows/reusable_details.yml
-    with:
-      provide-name: 'Harmony'
+
+  post_greeting:
+    runs-on: ubuntu-latest
+    needs: get_greet
+    steps:
+      - name: Post greeting
+        run: echo ${{ needs.get_greet.outputs.the_greet_text }}, Harmony!
