@@ -18,7 +18,6 @@ jobs:
         # Simulate a build error by running a command that fails
         echo "Building the project..."
         exit 1
-      continue-on-error: true
 
   test:
     runs-on: ubuntu-latest
