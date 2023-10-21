@@ -22,7 +22,6 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    needs: build
 
     steps:
     - name: Checkout code
@@ -35,7 +34,6 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build
 
     steps:
     - name: Checkout code
