@@ -1,9 +1,17 @@
 name: Reusuable details workflow
 on:
   workflow_call:
+    inputs:
+      provide-name: 
+        description: Please provide your name
+        required: false
+        default: 'World'
+        type: string
 jobs:
-  reusable-job:
+  use-data:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: echo "Hellow World"
+      - name: Print name
+        run: |
+          GREETING = ${{ inputs.provide-name }}
+          echo $GREETING
