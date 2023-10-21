@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
@@ -11,7 +12,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: actions/hello-world-javascript-action@main
+        uses: actions/hello-world-docker-action@v2
         with:
           who-to-greet: 'Harmony'
       # Use the output from the `hello` step
