@@ -15,31 +15,17 @@ jobs:
 
     - name: Build
       run: |
-        # Simulate a build error by running a command that fails
         echo "Building the project..."
         exit 1
 
-  test:
+  report:
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Run Tests
+    - name: Report
       run: |
-        # Add test commands here
-        echo "Running tests..."
-
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Deploy
-      run: |
-        # Add deployment commands here
-        echo "Deploying to production..."
-
+        echo "Uploading the report..."
