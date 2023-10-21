@@ -2,9 +2,6 @@ name: Using a reusable workflow
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   hello_world_job:
