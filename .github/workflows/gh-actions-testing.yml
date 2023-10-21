@@ -1,23 +1,22 @@
-name: Use GitHub Secrets Example
+name: Using the if field
 
 on:
   workflow_dispatch
 
 jobs:
-  use-secret:
+  use-if-field:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use the Secret
+      - name: Test the main branch
+        if: github.ref == 'refs/heads/main'
         run: |
-          # Access the secret using the environment variable
-          API_KEY=$MY_API_KEY
+          echo "This is the main branch"
 
-          # Print the secret value
-          echo "My API Key is: $API_KEY"
-
-        env:
-          MY_API_KEY: ${{ secrets.MY_API_KEY }}
+      - name: Test other branches
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo "Not the main branch!"
