@@ -20,4 +20,4 @@ jobs:
     needs: get_greet
     steps:
       - name: Post greeting
-        run: echo ${{ needs.get_greet.outputs.the_greet_text }}, Harmony!
+        run: echo ${{ needs.get_greet.outputs.greet_text }}, Harmony!
