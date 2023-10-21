@@ -1,22 +1,46 @@
-name: Using the if field
+name: Continue on Error Example
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - main
 
 jobs:
-  use-if-field:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Test the main branch
-        if: github.ref == 'refs/heads/main'
-        run: |
-          echo "This is the main branch"
+    - name: Build
+      run: |
+        # Simulate a build error by running a command that fails
+        echo "Building the project..."
+        exit 1
+      continue-on-error: true
 
-      - name: Test other branches
-        if: github.ref != 'refs/heads/main'
-        run: |
-          echo "Not the main branch!"
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run Tests
+      run: |
+        # Add test commands here
+        echo "Running tests..."
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Deploy
+      run: |
+        # Add deployment commands here
+        echo "Deploying to production..."
+
