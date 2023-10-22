@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      UPDATE_DATE: "November 1, 2023"
+      UPDATE_DATE: "October 21, 2023"
 
     steps:
       - name: Checkout code
