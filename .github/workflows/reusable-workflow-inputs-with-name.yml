@@ -1,4 +1,4 @@
-name: Inputs in reusable workflows
+name: Inputs in reusable workflows with name
 
 on:
   workflow_dispatch
