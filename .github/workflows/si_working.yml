@@ -1,0 +1,20 @@
+name: Script Injection Testing
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  check_title_job:
+    runs-on: ubuntu-latest
+    name: A job to test SI
+    steps:
+      - name: Check Issue title
+        run: |
+          title="${{ github.event.issue.title }}"
+          if [[ $title == *"bug"* ]]; then
+          echo "Issue is about a bug"
+          else
+          echo "Issue is not about a bug"
+          fi
