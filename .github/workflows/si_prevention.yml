@@ -1,7 +1,9 @@
 name: Script Injection Prevention
 
 on:
-  workflow_dispatch
+  issues:
+    types:
+      - opened
 
 jobs:
   check_title_job:
