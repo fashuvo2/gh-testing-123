@@ -1,0 +1,22 @@
+name: Using the if field
+
+on:
+  workflow_dispatch
+
+jobs:
+  use-if-field:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Detect the main branch
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "This is the main branch"
+
+      - name: Detect other branches
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo "Not the main branch!"
