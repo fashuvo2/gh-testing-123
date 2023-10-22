@@ -1,0 +1,17 @@
+name: Using a reusable workflow
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Get Code
+         uses: actions/checkout@v4
+       - name: Print text
+         run: |
+           echo "I'm from the original workflow"
+
+  greet:
+    uses: ./.github/workflows/reusable-base.yml
