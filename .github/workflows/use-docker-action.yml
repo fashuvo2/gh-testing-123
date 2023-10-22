@@ -1,0 +1,17 @@
+name: Use Docker Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Base job
+        run: echo 'I am from the Caller workflow'
+      - name: Use JS Action
+        uses: actions/hello-world-docker-action@main
+        with:
+          who-to-greet: 'Harmony'
