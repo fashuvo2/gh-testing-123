@@ -1,16 +1,14 @@
-name: Testing SI workflow
+name: Script Injection Prevention
 
 on:
-  issues:
-    types:
-      - opened
+  workflow_dispatch
 
 jobs:
-  hello_world_job:
+  check_title_job:
     runs-on: ubuntu-latest
     name: A job to test SI
     steps:
-      - name: Check PR title
+      - name: Check Issue title
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
