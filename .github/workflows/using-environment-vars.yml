@@ -1,0 +1,21 @@
+name: Using Environment Variables
+
+on:
+  workflow_dispatch
+
+env:
+  PLUGIN_VERSION: 4.2.1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      UPDATE_DATE: "November 1, 2023"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print Environment Variable
+        run: echo "The plugin version is $PLUGIN_VERSION. It was updated on $UPDATE_DATE."
