@@ -1,0 +1,11 @@
+name: Reusuable details workflow
+
+on:
+  workflow_call:
+
+jobs:
+  reusable-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "Hello World"
