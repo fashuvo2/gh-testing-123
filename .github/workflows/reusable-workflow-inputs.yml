@@ -12,6 +12,6 @@ jobs:
            echo "I'm from the original workflow"
 
   greet:
-    uses: ./.github/workflows/reusable_details.yml
+    uses: ./.github/workflows/reusuable-input-base.yml
     with:
       provide-name: 'Harmony'
