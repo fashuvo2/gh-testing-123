@@ -10,7 +10,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Base job 1
-        run: echo 'I'm from the Caller workflow'
+        run: echo 'I am from the Caller workflow'
       - name: Use composite
         uses: ./.github/actions/test-composite
         with:
