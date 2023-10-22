@@ -14,5 +14,5 @@ jobs:
       - name: Use composite
         uses: ./.github/actions/test-composite
         with:
-          custom-input-name: 'No'
+          custom-input-name: 'Yes'
   
