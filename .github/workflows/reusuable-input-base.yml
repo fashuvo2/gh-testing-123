@@ -1,0 +1,16 @@
+name: Reusuable details workflow
+on:
+  workflow_call:
+    inputs:
+      provide-name: 
+        description: Please provide your name
+        required: false
+        default: 'World'
+        type: string
+jobs:
+  use-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet
+        run: |
+          echo Hello, ${{ inputs.provide-name }}
