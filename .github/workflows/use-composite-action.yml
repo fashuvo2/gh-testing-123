@@ -7,9 +7,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Base job 1
+      - name: Base job
         run: echo 'I am from the Caller workflow'
       - name: Use composite
         uses: ./.github/actions/test-composite
