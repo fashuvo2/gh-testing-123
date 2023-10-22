@@ -1,4 +1,4 @@
-name: Using a reusable workflow
+name: GH Actions Testing
 
 on:
   push:
