@@ -1,0 +1,17 @@
+name: Inputs in reusable workflows with name
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Print text
+         run: |
+           echo "I'm from the original workflow"
+
+  greet:
+    uses: ./.github/workflows/reusuable-input-base.yml
+    with:
+      provide-name: 'Harmony'
